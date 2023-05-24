@@ -36,7 +36,10 @@ int main(void)
     BOARD_InitBootClocks();
     BOARD_InitDebugConsole();
 
+    for(int i = 0; i < 100; i++){
     PRINTF("hello world.\r\n");
+    PRINTF("%d",i);
+    }
 
     while (1)
     {
