@@ -11,7 +11,7 @@
 #include "pin_mux.h"
 #include "clock_config.h"
 #include "board.h"
-
+#include "lcd.h"
 /*******************************************************************************
  * Definitions
  ******************************************************************************/
@@ -30,22 +30,39 @@
  */
 int main(void)
 {
-    char ch;
-    int stav;
-
     /* Innit board hardware. */
     BOARD_InitBootPins();
     BOARD_InitBootClocks();
     BOARD_InitDebugConsole();
 
+	SysTick->VAL  = 0;
+
+	SysTick->LOAD = 120000;
+
+	SysTick->CTRL = SysTick_CTRL_CLKSOURCE_Msk | SysTick_CTRL_ENABLE_Msk | SysTick_CTRL_TICKINT_Msk;
+
+
+    int stav;
+
+
+
     for(int i = 0; i < 100; i++){
     PRINTF("hello world.\r\n");
     PRINTF("%d",i);
     }
+    LCD_init();
+    LCD_string("You kow what?\n");
+    LCD_string("rwr");
+    delay(2000);
+    LCD_to_xy(1,1);
+    LCD_string("Kus mijn kloten\n");
+    LCD_string("     UwU");
+
+
 
     while (1)
     {
-        //ch = GETCHAR();
+
         stav = GPIO_PinRead(BOARD_SW4_GPIO, BOARD_SW4_PIN);
 
         if(stav == 0){
@@ -53,7 +70,14 @@ int main(void)
         }else{
         	GPIO_PinWrite(BOARD_RGB_B_GPIO, BOARD_RGB_B_PIN, LED_OFF);
         }
-        //PUTCHAR(ch);
+
 
     }
 }
+
+void SysTick_Handler(void)
+{
+	count++;
+	GPIO_PinWrite(BOARD_RGB_R_GPIO, BOARD_RGB_R_PIN, LED_ON);
+}
+

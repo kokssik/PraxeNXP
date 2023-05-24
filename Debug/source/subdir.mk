@@ -5,14 +5,17 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../source/hello_world.c \
+../source/lcd.c \
 ../source/semihost_hardfault.c 
 
 C_DEPS += \
 ./source/hello_world.d \
+./source/lcd.d \
 ./source/semihost_hardfault.d 
 
 OBJS += \
 ./source/hello_world.o \
+./source/lcd.o \
 ./source/semihost_hardfault.o 
 
 
@@ -28,7 +31,7 @@ source/%.o: ../source/%.c source/subdir.mk
 clean: clean-source
 
 clean-source:
-	-$(RM) ./source/hello_world.d ./source/hello_world.o ./source/semihost_hardfault.d ./source/semihost_hardfault.o
+	-$(RM) ./source/hello_world.d ./source/hello_world.o ./source/lcd.d ./source/lcd.o ./source/semihost_hardfault.d ./source/semihost_hardfault.o
 
 .PHONY: clean-source
 

@@ -1,0 +1,14 @@
+/home/kokssik/Documents/MCUXpresso_11.7.1_9221/workspace/frdmk64f_hello_world/drivers/fsl_gpio.h:191:20:GPIO_PortSet	16	static
+/home/kokssik/Documents/MCUXpresso_11.7.1_9221/workspace/frdmk64f_hello_world/drivers/fsl_gpio.h:206:20:GPIO_PortClear	16	static
+../source/lcd.c:57:6:LCD_init	16	static
+../source/lcd.c:79:6:LCD_en_togle	8	static
+../source/lcd.c:89:6:SetUp	16	static
+../source/lcd.c:101:6:LCD_inst	16	static
+../source/lcd.c:112:6:LCD_clr	8	static
+../source/lcd.c:120:6:LCD_soft_Clr	16	static
+../source/lcd.c:128:6:LCD_to_xy	24	static
+../source/lcd.c:148:6:LCD_data_to_port	16	static
+../source/lcd.c:192:6:LCD_string	32	static
+../source/lcd.c:229:6:LCD_write	16	static
+../source/lcd.c:242:6:LCD_Pin_Enable	8	static
+../source/lcd.c:253:6:delay	16	static
