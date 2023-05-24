@@ -53,10 +53,16 @@ int main(void)
     LCD_init();
     LCD_string("You kow what?\n");
     LCD_string("rwr");
-    delay(2000);
+    delay(1000);
     LCD_to_xy(1,1);
     LCD_string("Kus mijn kloten\n");
     LCD_string("     UwU");
+    delay(1000);
+    LCD_to_xy(1,1);
+    LCD_clr();
+    LCD_string("Chtit, diky,\n");
+    LCD_string("Horni Police");
+    delay(1000);
 
 
 
