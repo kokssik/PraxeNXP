@@ -15,7 +15,8 @@
 /*******************************************************************************
  * Definitions
  ******************************************************************************/
-
+#define LED_ON 1
+#define LED_OFF 0
 
 /*******************************************************************************
  * Prototypes
@@ -31,7 +32,7 @@ int main(void)
 {
     char ch;
 
-    /* Init board hardware. */
+    /* Innit board hardware. */
     BOARD_InitBootPins();
     BOARD_InitBootClocks();
     BOARD_InitDebugConsole();
@@ -44,6 +45,9 @@ int main(void)
     while (1)
     {
         ch = GETCHAR();
+
+        GPIO_PinWrite(BOARD_RGB_B_GPIO, BOARD_RGB_B_PIN, LED_ON);
         PUTCHAR(ch);
+
     }
 }

@@ -62,27 +62,248 @@ void BOARD_InitBootPins(void);
   @{ */
 
 /* Symbols to be used with GPIO driver */
-#define BOARD_RGB_G_GPIO GPIOB                /*!<@brief GPIO peripheral base pointer */
-#define BOARD_RGB_G_GPIO_PIN_MASK (1U << 23U) /*!<@brief GPIO pin mask */
+#define BOARD_RGB_B_GPIO GPIOB                /*!<@brief GPIO peripheral base pointer */
+#define BOARD_RGB_B_GPIO_PIN_MASK (1U << 23U) /*!<@brief GPIO pin mask */
 
 /* Symbols to be used with PORT driver */
-#define BOARD_RGB_G_PORT PORTB                /*!<@brief PORT peripheral base pointer */
-#define BOARD_RGB_G_PIN 23U                   /*!<@brief PORT pin number */
-#define BOARD_RGB_G_PIN_MASK (1U << 23U)      /*!<@brief PORT pin mask */
+#define BOARD_RGB_B_PORT PORTB                /*!<@brief PORT peripheral base pointer */
+#define BOARD_RGB_B_PIN 23U                   /*!<@brief PORT pin number */
+#define BOARD_RGB_B_PIN_MASK (1U << 23U)      /*!<@brief PORT pin mask */
                                               /* @} */
 
 /*! @name PORTC2 (number 72), J1[14]
   @{ */
 
 /* Symbols to be used with GPIO driver */
-#define BOARD_RGB_B_GPIO GPIOC               /*!<@brief GPIO peripheral base pointer */
-#define BOARD_RGB_B_GPIO_PIN_MASK (1U << 2U) /*!<@brief GPIO pin mask */
+#define BOARD_RGB_G_GPIO GPIOC               /*!<@brief GPIO peripheral base pointer */
+#define BOARD_RGB_G_GPIO_PIN_MASK (1U << 2U) /*!<@brief GPIO pin mask */
 
 /* Symbols to be used with PORT driver */
-#define BOARD_RGB_B_PORT PORTC               /*!<@brief PORT peripheral base pointer */
-#define BOARD_RGB_B_PIN 2U                   /*!<@brief PORT pin number */
-#define BOARD_RGB_B_PIN_MASK (1U << 2U)      /*!<@brief PORT pin mask */
+#define BOARD_RGB_G_PORT PORTC               /*!<@brief PORT peripheral base pointer */
+#define BOARD_RGB_G_PIN 2U                   /*!<@brief PORT pin number */
+#define BOARD_RGB_G_PIN_MASK (1U << 2U)      /*!<@brief PORT pin mask */
                                              /* @} */
+
+/*! @name PORTD1 (number 94), J2[12]
+  @{ */
+
+/* Symbols to be used with GPIO driver */
+#define BOARD_SW4_GPIO GPIOD               /*!<@brief GPIO peripheral base pointer */
+#define BOARD_SW4_GPIO_PIN_MASK (1U << 1U) /*!<@brief GPIO pin mask */
+
+/* Symbols to be used with PORT driver */
+#define BOARD_SW4_PORT PORTD               /*!<@brief PORT peripheral base pointer */
+#define BOARD_SW4_PIN 1U                   /*!<@brief PORT pin number */
+#define BOARD_SW4_PIN_MASK (1U << 1U)      /*!<@brief PORT pin mask */
+                                           /* @} */
+
+/*! @name PORTD3 (number 96), J2[10]
+  @{ */
+
+/* Symbols to be used with GPIO driver */
+#define BOARD_SW3_GPIO GPIOD               /*!<@brief GPIO peripheral base pointer */
+#define BOARD_SW3_GPIO_PIN_MASK (1U << 3U) /*!<@brief GPIO pin mask */
+
+/* Symbols to be used with PORT driver */
+#define BOARD_SW3_PORT PORTD               /*!<@brief PORT peripheral base pointer */
+#define BOARD_SW3_PIN 3U                   /*!<@brief PORT pin number */
+#define BOARD_SW3_PIN_MASK (1U << 3U)      /*!<@brief PORT pin mask */
+                                           /* @} */
+
+/*! @name PORTD2 (number 95), J2[8]
+  @{ */
+
+/* Symbols to be used with GPIO driver */
+#define BOARD_SW2_GPIO GPIOD               /*!<@brief GPIO peripheral base pointer */
+#define BOARD_SW2_GPIO_PIN_MASK (1U << 2U) /*!<@brief GPIO pin mask */
+
+/* Symbols to be used with PORT driver */
+#define BOARD_SW2_PORT PORTD               /*!<@brief PORT peripheral base pointer */
+#define BOARD_SW2_PIN 2U                   /*!<@brief PORT pin number */
+#define BOARD_SW2_PIN_MASK (1U << 2U)      /*!<@brief PORT pin mask */
+                                           /* @} */
+
+/*! @name PORTD0 (number 93), J2[6]
+  @{ */
+
+/* Symbols to be used with GPIO driver */
+#define BOARD_SW1_GPIO GPIOD               /*!<@brief GPIO peripheral base pointer */
+#define BOARD_SW1_GPIO_PIN_MASK (1U << 0U) /*!<@brief GPIO pin mask */
+
+/* Symbols to be used with PORT driver */
+#define BOARD_SW1_PORT PORTD               /*!<@brief PORT peripheral base pointer */
+#define BOARD_SW1_PIN 0U                   /*!<@brief PORT pin number */
+#define BOARD_SW1_PIN_MASK (1U << 0U)      /*!<@brief PORT pin mask */
+                                           /* @} */
+
+/*! @name PORTC5 (number 77), J1[15]
+  @{ */
+
+/* Symbols to be used with GPIO driver */
+#define BOARD_BT_W_GPIO GPIOC               /*!<@brief GPIO peripheral base pointer */
+#define BOARD_BT_W_GPIO_PIN_MASK (1U << 5U) /*!<@brief GPIO pin mask */
+
+/* Symbols to be used with PORT driver */
+#define BOARD_BT_W_PORT PORTC               /*!<@brief PORT peripheral base pointer */
+#define BOARD_BT_W_PIN 5U                   /*!<@brief PORT pin number */
+#define BOARD_BT_W_PIN_MASK (1U << 5U)      /*!<@brief PORT pin mask */
+                                            /* @} */
+
+/*! @name PORTC7 (number 79), J1[13]
+  @{ */
+
+/* Symbols to be used with GPIO driver */
+#define BOARD_BT_N_GPIO GPIOC               /*!<@brief GPIO peripheral base pointer */
+#define BOARD_BT_N_GPIO_PIN_MASK (1U << 7U) /*!<@brief GPIO pin mask */
+
+/* Symbols to be used with PORT driver */
+#define BOARD_BT_N_PORT PORTC               /*!<@brief PORT peripheral base pointer */
+#define BOARD_BT_N_PIN 7U                   /*!<@brief PORT pin number */
+#define BOARD_BT_N_PIN_MASK (1U << 7U)      /*!<@brief PORT pin mask */
+                                            /* @} */
+
+/*! @name PORTC8 (number 80), J1[7]
+  @{ */
+
+/* Symbols to be used with GPIO driver */
+#define BOARD_BT_E_GPIO GPIOC               /*!<@brief GPIO peripheral base pointer */
+#define BOARD_BT_E_GPIO_PIN_MASK (1U << 8U) /*!<@brief GPIO pin mask */
+
+/* Symbols to be used with PORT driver */
+#define BOARD_BT_E_PORT PORTC               /*!<@brief PORT peripheral base pointer */
+#define BOARD_BT_E_PIN 8U                   /*!<@brief PORT pin number */
+#define BOARD_BT_E_PIN_MASK (1U << 8U)      /*!<@brief PORT pin mask */
+                                            /* @} */
+
+/*! @name PORTC1 (number 71), J1[5]
+  @{ */
+
+/* Symbols to be used with GPIO driver */
+#define BOARD_ENC_SW_GPIO GPIOC               /*!<@brief GPIO peripheral base pointer */
+#define BOARD_ENC_SW_GPIO_PIN_MASK (1U << 1U) /*!<@brief GPIO pin mask */
+
+/* Symbols to be used with PORT driver */
+#define BOARD_ENC_SW_PORT PORTC               /*!<@brief PORT peripheral base pointer */
+#define BOARD_ENC_SW_PIN 1U                   /*!<@brief PORT pin number */
+#define BOARD_ENC_SW_PIN_MASK (1U << 1U)      /*!<@brief PORT pin mask */
+                                              /* @} */
+
+/*! @name PORTB18 (number 64), J1[1]
+  @{ */
+
+/* Symbols to be used with GPIO driver */
+#define BOARD_BT_S_GPIO GPIOB                /*!<@brief GPIO peripheral base pointer */
+#define BOARD_BT_S_GPIO_PIN_MASK (1U << 18U) /*!<@brief GPIO pin mask */
+
+/* Symbols to be used with PORT driver */
+#define BOARD_BT_S_PORT PORTB                /*!<@brief PORT peripheral base pointer */
+#define BOARD_BT_S_PIN 18U                   /*!<@brief PORT pin number */
+#define BOARD_BT_S_PIN_MASK (1U << 18U)      /*!<@brief PORT pin mask */
+                                             /* @} */
+
+/*! @name PORTC0 (number 70), J1[11]
+  @{ */
+
+/* Symbols to be used with GPIO driver */
+#define BOARD_ENC_B_GPIO GPIOC               /*!<@brief GPIO peripheral base pointer */
+#define BOARD_ENC_B_GPIO_PIN_MASK (1U << 0U) /*!<@brief GPIO pin mask */
+
+/* Symbols to be used with PORT driver */
+#define BOARD_ENC_B_PORT PORTC               /*!<@brief PORT peripheral base pointer */
+#define BOARD_ENC_B_PIN 0U                   /*!<@brief PORT pin number */
+#define BOARD_ENC_B_PIN_MASK (1U << 0U)      /*!<@brief PORT pin mask */
+                                             /* @} */
+
+/*! @name PORTC9 (number 81), J1[9]
+  @{ */
+
+/* Symbols to be used with GPIO driver */
+#define BOARD_ENC_A_GPIO GPIOC               /*!<@brief GPIO peripheral base pointer */
+#define BOARD_ENC_A_GPIO_PIN_MASK (1U << 9U) /*!<@brief GPIO pin mask */
+
+/* Symbols to be used with PORT driver */
+#define BOARD_ENC_A_PORT PORTC               /*!<@brief PORT peripheral base pointer */
+#define BOARD_ENC_A_PIN 9U                   /*!<@brief PORT pin number */
+#define BOARD_ENC_A_PIN_MASK (1U << 9U)      /*!<@brief PORT pin mask */
+                                             /* @} */
+
+/*! @name PORTC10 (number 82), J4[12]
+  @{ */
+
+/* Symbols to be used with GPIO driver */
+#define BOARD_D_RS_GPIO GPIOC                /*!<@brief GPIO peripheral base pointer */
+#define BOARD_D_RS_GPIO_PIN_MASK (1U << 10U) /*!<@brief GPIO pin mask */
+
+/* Symbols to be used with PORT driver */
+#define BOARD_D_RS_PORT PORTC                /*!<@brief PORT peripheral base pointer */
+#define BOARD_D_RS_PIN 10U                   /*!<@brief PORT pin number */
+#define BOARD_D_RS_PIN_MASK (1U << 10U)      /*!<@brief PORT pin mask */
+                                             /* @} */
+
+/*! @name PORTC11 (number 83), J4[10]
+  @{ */
+
+/* Symbols to be used with GPIO driver */
+#define BOARD_D_E_GPIO GPIOC                /*!<@brief GPIO peripheral base pointer */
+#define BOARD_D_E_GPIO_PIN_MASK (1U << 11U) /*!<@brief GPIO pin mask */
+
+/* Symbols to be used with PORT driver */
+#define BOARD_D_E_PORT PORTC                /*!<@brief PORT peripheral base pointer */
+#define BOARD_D_E_PIN 11U                   /*!<@brief PORT pin number */
+#define BOARD_D_E_PIN_MASK (1U << 11U)      /*!<@brief PORT pin mask */
+                                            /* @} */
+
+/*! @name PORTB2 (number 55), J4[2]
+  @{ */
+
+/* Symbols to be used with GPIO driver */
+#define BOARD_DB7_GPIO GPIOB               /*!<@brief GPIO peripheral base pointer */
+#define BOARD_DB7_GPIO_PIN_MASK (1U << 2U) /*!<@brief GPIO pin mask */
+
+/* Symbols to be used with PORT driver */
+#define BOARD_DB7_PORT PORTB               /*!<@brief PORT peripheral base pointer */
+#define BOARD_DB7_PIN 2U                   /*!<@brief PORT pin number */
+#define BOARD_DB7_PIN_MASK (1U << 2U)      /*!<@brief PORT pin mask */
+                                           /* @} */
+
+/*! @name PORTB3 (number 56), J4[4]
+  @{ */
+
+/* Symbols to be used with GPIO driver */
+#define BOARD_DB6_GPIO GPIOB               /*!<@brief GPIO peripheral base pointer */
+#define BOARD_DB6_GPIO_PIN_MASK (1U << 3U) /*!<@brief GPIO pin mask */
+
+/* Symbols to be used with PORT driver */
+#define BOARD_DB6_PORT PORTB               /*!<@brief PORT peripheral base pointer */
+#define BOARD_DB6_PIN 3U                   /*!<@brief PORT pin number */
+#define BOARD_DB6_PIN_MASK (1U << 3U)      /*!<@brief PORT pin mask */
+                                           /* @} */
+
+/*! @name PORTB10 (number 58), J4[6]
+  @{ */
+
+/* Symbols to be used with GPIO driver */
+#define BOARD_DB5_GPIO GPIOB                /*!<@brief GPIO peripheral base pointer */
+#define BOARD_DB5_GPIO_PIN_MASK (1U << 10U) /*!<@brief GPIO pin mask */
+
+/* Symbols to be used with PORT driver */
+#define BOARD_DB5_PORT PORTB                /*!<@brief PORT peripheral base pointer */
+#define BOARD_DB5_PIN 10U                   /*!<@brief PORT pin number */
+#define BOARD_DB5_PIN_MASK (1U << 10U)      /*!<@brief PORT pin mask */
+                                            /* @} */
+
+/*! @name PORTB11 (number 59), J4[8]
+  @{ */
+
+/* Symbols to be used with GPIO driver */
+#define BOARD_DB4_GPIO GPIOB                /*!<@brief GPIO peripheral base pointer */
+#define BOARD_DB4_GPIO_PIN_MASK (1U << 11U) /*!<@brief GPIO pin mask */
+
+/* Symbols to be used with PORT driver */
+#define BOARD_DB4_PORT PORTB                /*!<@brief PORT peripheral base pointer */
+#define BOARD_DB4_PIN 11U                   /*!<@brief PORT pin number */
+#define BOARD_DB4_PIN_MASK (1U << 11U)      /*!<@brief PORT pin mask */
+                                            /* @} */
 
 /*!
  * @brief Configures pin routing and optionally pin electrical features.

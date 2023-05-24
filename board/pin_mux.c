@@ -14,9 +14,26 @@ mcu_data: ksdk2_0
 processor_version: 13.0.1
 board: FRDM-K64F
 pin_labels:
-- {pin_num: '69', pin_signal: PTB23/SPI2_SIN/SPI0_PCS5/FB_AD28, label: 'J1[10]', identifier: RGB_G}
-- {pin_num: '72', pin_signal: ADC0_SE4b/CMP1_IN0/PTC2/SPI0_PCS2/UART1_CTS_b/FTM0_CH1/FB_AD12/I2S0_TX_FS, label: 'J1[14]', identifier: RGB_B}
+- {pin_num: '69', pin_signal: PTB23/SPI2_SIN/SPI0_PCS5/FB_AD28, label: 'J1[10]', identifier: RGB_G;RGB_B}
+- {pin_num: '72', pin_signal: ADC0_SE4b/CMP1_IN0/PTC2/SPI0_PCS2/UART1_CTS_b/FTM0_CH1/FB_AD12/I2S0_TX_FS, label: 'J1[14]', identifier: RGB_B;RGB_G}
 - {pin_num: '73', pin_signal: CMP1_IN1/PTC3/LLWU_P7/SPI0_PCS1/UART1_RX/FTM0_CH2/CLKOUT/I2S0_TX_BCLK, label: RGB_R, identifier: RGB_R}
+- {pin_num: '64', pin_signal: PTB18/CAN0_TX/FTM2_CH0/I2S0_TX_BCLK/FB_AD15/FTM2_QD_PHA, label: 'J1[1]', identifier: BT_S}
+- {pin_num: '71', pin_signal: ADC0_SE15/PTC1/LLWU_P6/SPI0_PCS3/UART1_RTS_b/FTM0_CH0/FB_AD13/I2S0_TXD0, label: 'J1[5]', identifier: ENC_SW}
+- {pin_num: '80', pin_signal: ADC1_SE4b/CMP0_IN2/PTC8/FTM3_CH4/I2S0_MCLK/FB_AD7, label: 'J1[7]', identifier: BT_E}
+- {pin_num: '81', pin_signal: ADC1_SE5b/CMP0_IN3/PTC9/FTM3_CH5/I2S0_RX_BCLK/FB_AD6/FTM2_FLT0, label: 'J1[9]', identifier: ENC_A}
+- {pin_num: '77', pin_signal: PTC5/LLWU_P9/SPI0_SCK/LPTMR0_ALT2/I2S0_RXD0/FB_AD10/CMP0_OUT/FTM0_CH2, label: 'J1[15]', identifier: BT_W}
+- {pin_num: '79', pin_signal: CMP0_IN1/PTC7/SPI0_SIN/USB_SOF_OUT/I2S0_RX_FS/FB_AD8, label: 'J1[13]', identifier: CMP0_IN1;BT_N}
+- {pin_num: '70', pin_signal: ADC0_SE14/PTC0/SPI0_PCS4/PDB0_EXTRG/USB_SOF_OUT/FB_AD14/I2S0_TXD1, label: 'J1[11]', identifier: ENC_B}
+- {pin_num: '93', pin_signal: PTD0/LLWU_P12/SPI0_PCS0/UART2_RTS_b/FTM3_CH0/FB_ALE/FB_CS1_b/FB_TS_b, label: 'J2[6]', identifier: SW1}
+- {pin_num: '95', pin_signal: PTD2/LLWU_P13/SPI0_SOUT/UART2_RX/FTM3_CH2/FB_AD4/I2C0_SCL, label: 'J2[8]', identifier: UART2_RX;SW2}
+- {pin_num: '96', pin_signal: PTD3/SPI0_SIN/UART2_TX/FTM3_CH3/FB_AD3/I2C0_SDA, label: 'J2[10]', identifier: UART2_TX;SW3}
+- {pin_num: '94', pin_signal: ADC0_SE5b/PTD1/SPI0_SCK/UART2_CTS_b/FTM3_CH1/FB_CS0_b, label: 'J2[12]', identifier: SW4}
+- {pin_num: '55', pin_signal: ADC0_SE12/PTB2/I2C0_SCL/UART0_RTS_b/ENET0_1588_TMR0/FTM0_FLT3, label: 'J4[2]', identifier: ADC0_SE12;DB7}
+- {pin_num: '56', pin_signal: ADC0_SE13/PTB3/I2C0_SDA/UART0_CTS_b/UART0_COL_b/ENET0_1588_TMR1/FTM0_FLT0, label: 'J4[4]', identifier: DB6}
+- {pin_num: '58', pin_signal: ADC1_SE14/PTB10/SPI1_PCS0/UART3_RX/FB_AD19/FTM0_FLT1, label: 'J4[6]', identifier: DB5}
+- {pin_num: '59', pin_signal: ADC1_SE15/PTB11/SPI1_SCK/UART3_TX/FB_AD18/FTM0_FLT2, label: 'J4[8]', identifier: DB4}
+- {pin_num: '83', pin_signal: ADC1_SE7b/PTC11/LLWU_P11/I2C1_SDA/FTM3_CH7/I2S0_RXD1/FB_RW_b, label: 'J4[10]', identifier: D_E}
+- {pin_num: '82', pin_signal: ADC1_SE6b/PTC10/I2C1_SCL/FTM3_CH6/I2S0_RX_FS/FB_AD5, label: 'J4[12]', identifier: DB7;D_RS}
  * BE CAREFUL MODIFYING THIS COMMENT - IT IS YAML SETTINGS FOR TOOLS ***********
  */
 /* clang-format on */
@@ -47,8 +64,35 @@ BOARD_InitPins:
   - {pin_num: '63', peripheral: UART0, signal: TX, pin_signal: PTB17/SPI1_SIN/UART0_TX/FTM_CLKIN1/FB_AD16/EWM_OUT_b}
   - {pin_num: '36', peripheral: TPIU, signal: SWO, pin_signal: PTA2/UART0_TX/FTM0_CH7/JTAG_TDO/TRACE_SWO/EZP_DO, drive_strength: low, pull_select: down, pull_enable: disable}
   - {pin_num: '73', peripheral: GPIOC, signal: 'GPIO, 3', pin_signal: CMP1_IN1/PTC3/LLWU_P7/SPI0_PCS1/UART1_RX/FTM0_CH2/CLKOUT/I2S0_TX_BCLK, direction: OUTPUT}
-  - {pin_num: '69', peripheral: GPIOB, signal: 'GPIO, 23', pin_signal: PTB23/SPI2_SIN/SPI0_PCS5/FB_AD28, direction: OUTPUT}
-  - {pin_num: '72', peripheral: GPIOC, signal: 'GPIO, 2', pin_signal: ADC0_SE4b/CMP1_IN0/PTC2/SPI0_PCS2/UART1_CTS_b/FTM0_CH1/FB_AD12/I2S0_TX_FS, direction: OUTPUT}
+  - {pin_num: '69', peripheral: GPIOB, signal: 'GPIO, 23', pin_signal: PTB23/SPI2_SIN/SPI0_PCS5/FB_AD28, identifier: RGB_B, direction: OUTPUT}
+  - {pin_num: '72', peripheral: GPIOC, signal: 'GPIO, 2', pin_signal: ADC0_SE4b/CMP1_IN0/PTC2/SPI0_PCS2/UART1_CTS_b/FTM0_CH1/FB_AD12/I2S0_TX_FS, identifier: RGB_G,
+    direction: OUTPUT}
+  - {pin_num: '94', peripheral: GPIOD, signal: 'GPIO, 1', pin_signal: ADC0_SE5b/PTD1/SPI0_SCK/UART2_CTS_b/FTM3_CH1/FB_CS0_b, direction: INPUT, pull_select: up, pull_enable: enable}
+  - {pin_num: '96', peripheral: GPIOD, signal: 'GPIO, 3', pin_signal: PTD3/SPI0_SIN/UART2_TX/FTM3_CH3/FB_AD3/I2C0_SDA, identifier: SW3, direction: INPUT, pull_select: up,
+    pull_enable: enable}
+  - {pin_num: '95', peripheral: GPIOD, signal: 'GPIO, 2', pin_signal: PTD2/LLWU_P13/SPI0_SOUT/UART2_RX/FTM3_CH2/FB_AD4/I2C0_SCL, identifier: SW2, direction: INPUT,
+    pull_select: up, pull_enable: enable}
+  - {pin_num: '93', peripheral: GPIOD, signal: 'GPIO, 0', pin_signal: PTD0/LLWU_P12/SPI0_PCS0/UART2_RTS_b/FTM3_CH0/FB_ALE/FB_CS1_b/FB_TS_b, direction: INPUT, pull_select: up,
+    pull_enable: enable}
+  - {pin_num: '77', peripheral: GPIOC, signal: 'GPIO, 5', pin_signal: PTC5/LLWU_P9/SPI0_SCK/LPTMR0_ALT2/I2S0_RXD0/FB_AD10/CMP0_OUT/FTM0_CH2, direction: INPUT, pull_select: up,
+    pull_enable: enable}
+  - {pin_num: '79', peripheral: GPIOC, signal: 'GPIO, 7', pin_signal: CMP0_IN1/PTC7/SPI0_SIN/USB_SOF_OUT/I2S0_RX_FS/FB_AD8, identifier: BT_N, direction: INPUT, pull_select: up,
+    pull_enable: enable}
+  - {pin_num: '80', peripheral: GPIOC, signal: 'GPIO, 8', pin_signal: ADC1_SE4b/CMP0_IN2/PTC8/FTM3_CH4/I2S0_MCLK/FB_AD7, direction: INPUT, pull_select: up, pull_enable: enable}
+  - {pin_num: '71', peripheral: GPIOC, signal: 'GPIO, 1', pin_signal: ADC0_SE15/PTC1/LLWU_P6/SPI0_PCS3/UART1_RTS_b/FTM0_CH0/FB_AD13/I2S0_TXD0, direction: INPUT, pull_select: up,
+    pull_enable: enable}
+  - {pin_num: '64', peripheral: GPIOB, signal: 'GPIO, 18', pin_signal: PTB18/CAN0_TX/FTM2_CH0/I2S0_TX_BCLK/FB_AD15/FTM2_QD_PHA, direction: INPUT, pull_select: up,
+    pull_enable: enable}
+  - {pin_num: '70', peripheral: GPIOC, signal: 'GPIO, 0', pin_signal: ADC0_SE14/PTC0/SPI0_PCS4/PDB0_EXTRG/USB_SOF_OUT/FB_AD14/I2S0_TXD1, direction: INPUT, pull_select: up,
+    pull_enable: enable}
+  - {pin_num: '81', peripheral: GPIOC, signal: 'GPIO, 9', pin_signal: ADC1_SE5b/CMP0_IN3/PTC9/FTM3_CH5/I2S0_RX_BCLK/FB_AD6/FTM2_FLT0, direction: INPUT, pull_select: up,
+    pull_enable: enable}
+  - {pin_num: '82', peripheral: GPIOC, signal: 'GPIO, 10', pin_signal: ADC1_SE6b/PTC10/I2C1_SCL/FTM3_CH6/I2S0_RX_FS/FB_AD5, identifier: D_RS, direction: OUTPUT}
+  - {pin_num: '83', peripheral: GPIOC, signal: 'GPIO, 11', pin_signal: ADC1_SE7b/PTC11/LLWU_P11/I2C1_SDA/FTM3_CH7/I2S0_RXD1/FB_RW_b, direction: OUTPUT}
+  - {pin_num: '55', peripheral: GPIOB, signal: 'GPIO, 2', pin_signal: ADC0_SE12/PTB2/I2C0_SCL/UART0_RTS_b/ENET0_1588_TMR0/FTM0_FLT3, identifier: DB7, direction: OUTPUT}
+  - {pin_num: '56', peripheral: GPIOB, signal: 'GPIO, 3', pin_signal: ADC0_SE13/PTB3/I2C0_SDA/UART0_CTS_b/UART0_COL_b/ENET0_1588_TMR1/FTM0_FLT0, direction: OUTPUT}
+  - {pin_num: '58', peripheral: GPIOB, signal: 'GPIO, 10', pin_signal: ADC1_SE14/PTB10/SPI1_PCS0/UART3_RX/FB_AD19/FTM0_FLT1, direction: OUTPUT}
+  - {pin_num: '59', peripheral: GPIOB, signal: 'GPIO, 11', pin_signal: ADC1_SE15/PTB11/SPI1_SCK/UART3_TX/FB_AD18/FTM0_FLT2, direction: OUTPUT}
  * BE CAREFUL MODIFYING THIS COMMENT - IT IS YAML SETTINGS FOR TOOLS ***********
  */
 /* clang-format on */
@@ -67,20 +111,71 @@ void BOARD_InitPins(void)
     CLOCK_EnableClock(kCLOCK_PortB);
     /* Port C Clock Gate Control: Clock enabled */
     CLOCK_EnableClock(kCLOCK_PortC);
+    /* Port D Clock Gate Control: Clock enabled */
+    CLOCK_EnableClock(kCLOCK_PortD);
 
-    gpio_pin_config_t RGB_G_config = {
+    gpio_pin_config_t DB7_config = {
         .pinDirection = kGPIO_DigitalOutput,
         .outputLogic = 0U
     };
-    /* Initialize GPIO functionality on pin PTB23 (pin 69)  */
-    GPIO_PinInit(BOARD_RGB_G_GPIO, BOARD_RGB_G_PIN, &RGB_G_config);
+    /* Initialize GPIO functionality on pin PTB2 (pin 55)  */
+    GPIO_PinInit(BOARD_DB7_GPIO, BOARD_DB7_PIN, &DB7_config);
+
+    gpio_pin_config_t DB6_config = {
+        .pinDirection = kGPIO_DigitalOutput,
+        .outputLogic = 0U
+    };
+    /* Initialize GPIO functionality on pin PTB3 (pin 56)  */
+    GPIO_PinInit(BOARD_DB6_GPIO, BOARD_DB6_PIN, &DB6_config);
+
+    gpio_pin_config_t DB5_config = {
+        .pinDirection = kGPIO_DigitalOutput,
+        .outputLogic = 0U
+    };
+    /* Initialize GPIO functionality on pin PTB10 (pin 58)  */
+    GPIO_PinInit(BOARD_DB5_GPIO, BOARD_DB5_PIN, &DB5_config);
+
+    gpio_pin_config_t DB4_config = {
+        .pinDirection = kGPIO_DigitalOutput,
+        .outputLogic = 0U
+    };
+    /* Initialize GPIO functionality on pin PTB11 (pin 59)  */
+    GPIO_PinInit(BOARD_DB4_GPIO, BOARD_DB4_PIN, &DB4_config);
+
+    gpio_pin_config_t BT_S_config = {
+        .pinDirection = kGPIO_DigitalInput,
+        .outputLogic = 0U
+    };
+    /* Initialize GPIO functionality on pin PTB18 (pin 64)  */
+    GPIO_PinInit(BOARD_BT_S_GPIO, BOARD_BT_S_PIN, &BT_S_config);
 
     gpio_pin_config_t RGB_B_config = {
         .pinDirection = kGPIO_DigitalOutput,
         .outputLogic = 0U
     };
-    /* Initialize GPIO functionality on pin PTC2 (pin 72)  */
+    /* Initialize GPIO functionality on pin PTB23 (pin 69)  */
     GPIO_PinInit(BOARD_RGB_B_GPIO, BOARD_RGB_B_PIN, &RGB_B_config);
+
+    gpio_pin_config_t ENC_B_config = {
+        .pinDirection = kGPIO_DigitalInput,
+        .outputLogic = 0U
+    };
+    /* Initialize GPIO functionality on pin PTC0 (pin 70)  */
+    GPIO_PinInit(BOARD_ENC_B_GPIO, BOARD_ENC_B_PIN, &ENC_B_config);
+
+    gpio_pin_config_t ENC_SW_config = {
+        .pinDirection = kGPIO_DigitalInput,
+        .outputLogic = 0U
+    };
+    /* Initialize GPIO functionality on pin PTC1 (pin 71)  */
+    GPIO_PinInit(BOARD_ENC_SW_GPIO, BOARD_ENC_SW_PIN, &ENC_SW_config);
+
+    gpio_pin_config_t RGB_G_config = {
+        .pinDirection = kGPIO_DigitalOutput,
+        .outputLogic = 0U
+    };
+    /* Initialize GPIO functionality on pin PTC2 (pin 72)  */
+    GPIO_PinInit(BOARD_RGB_G_GPIO, BOARD_RGB_G_PIN, &RGB_G_config);
 
     gpio_pin_config_t RGB_R_config = {
         .pinDirection = kGPIO_DigitalOutput,
@@ -88,6 +183,76 @@ void BOARD_InitPins(void)
     };
     /* Initialize GPIO functionality on pin PTC3 (pin 73)  */
     GPIO_PinInit(BOARD_RGB_R_GPIO, BOARD_RGB_R_PIN, &RGB_R_config);
+
+    gpio_pin_config_t BT_W_config = {
+        .pinDirection = kGPIO_DigitalInput,
+        .outputLogic = 0U
+    };
+    /* Initialize GPIO functionality on pin PTC5 (pin 77)  */
+    GPIO_PinInit(BOARD_BT_W_GPIO, BOARD_BT_W_PIN, &BT_W_config);
+
+    gpio_pin_config_t BT_N_config = {
+        .pinDirection = kGPIO_DigitalInput,
+        .outputLogic = 0U
+    };
+    /* Initialize GPIO functionality on pin PTC7 (pin 79)  */
+    GPIO_PinInit(BOARD_BT_N_GPIO, BOARD_BT_N_PIN, &BT_N_config);
+
+    gpio_pin_config_t BT_E_config = {
+        .pinDirection = kGPIO_DigitalInput,
+        .outputLogic = 0U
+    };
+    /* Initialize GPIO functionality on pin PTC8 (pin 80)  */
+    GPIO_PinInit(BOARD_BT_E_GPIO, BOARD_BT_E_PIN, &BT_E_config);
+
+    gpio_pin_config_t ENC_A_config = {
+        .pinDirection = kGPIO_DigitalInput,
+        .outputLogic = 0U
+    };
+    /* Initialize GPIO functionality on pin PTC9 (pin 81)  */
+    GPIO_PinInit(BOARD_ENC_A_GPIO, BOARD_ENC_A_PIN, &ENC_A_config);
+
+    gpio_pin_config_t D_RS_config = {
+        .pinDirection = kGPIO_DigitalOutput,
+        .outputLogic = 0U
+    };
+    /* Initialize GPIO functionality on pin PTC10 (pin 82)  */
+    GPIO_PinInit(BOARD_D_RS_GPIO, BOARD_D_RS_PIN, &D_RS_config);
+
+    gpio_pin_config_t D_E_config = {
+        .pinDirection = kGPIO_DigitalOutput,
+        .outputLogic = 0U
+    };
+    /* Initialize GPIO functionality on pin PTC11 (pin 83)  */
+    GPIO_PinInit(BOARD_D_E_GPIO, BOARD_D_E_PIN, &D_E_config);
+
+    gpio_pin_config_t SW1_config = {
+        .pinDirection = kGPIO_DigitalInput,
+        .outputLogic = 0U
+    };
+    /* Initialize GPIO functionality on pin PTD0 (pin 93)  */
+    GPIO_PinInit(BOARD_SW1_GPIO, BOARD_SW1_PIN, &SW1_config);
+
+    gpio_pin_config_t SW4_config = {
+        .pinDirection = kGPIO_DigitalInput,
+        .outputLogic = 0U
+    };
+    /* Initialize GPIO functionality on pin PTD1 (pin 94)  */
+    GPIO_PinInit(BOARD_SW4_GPIO, BOARD_SW4_PIN, &SW4_config);
+
+    gpio_pin_config_t SW2_config = {
+        .pinDirection = kGPIO_DigitalInput,
+        .outputLogic = 0U
+    };
+    /* Initialize GPIO functionality on pin PTD2 (pin 95)  */
+    GPIO_PinInit(BOARD_SW2_GPIO, BOARD_SW2_PIN, &SW2_config);
+
+    gpio_pin_config_t SW3_config = {
+        .pinDirection = kGPIO_DigitalInput,
+        .outputLogic = 0U
+    };
+    /* Initialize GPIO functionality on pin PTD3 (pin 96)  */
+    GPIO_PinInit(BOARD_SW3_GPIO, BOARD_SW3_PIN, &SW3_config);
 
     /* PORTA2 (pin 36) is configured as TRACE_SWO */
     PORT_SetPinMux(PORTA, 2U, kPORT_MuxAlt7);
@@ -107,20 +272,159 @@ void BOARD_InitPins(void)
                       * is configured as a digital output. */
                      | PORT_PCR_DSE(kPORT_LowDriveStrength));
 
+    /* PORTB10 (pin 58) is configured as PTB10 */
+    PORT_SetPinMux(BOARD_DB5_PORT, BOARD_DB5_PIN, kPORT_MuxAsGpio);
+
+    /* PORTB11 (pin 59) is configured as PTB11 */
+    PORT_SetPinMux(BOARD_DB4_PORT, BOARD_DB4_PIN, kPORT_MuxAsGpio);
+
     /* PORTB16 (pin 62) is configured as UART0_RX */
     PORT_SetPinMux(BOARD_DEBUG_UART_RX_PORT, BOARD_DEBUG_UART_RX_PIN, kPORT_MuxAlt3);
 
     /* PORTB17 (pin 63) is configured as UART0_TX */
     PORT_SetPinMux(BOARD_DEBUG_UART_TX_PORT, BOARD_DEBUG_UART_TX_PIN, kPORT_MuxAlt3);
 
+    /* PORTB18 (pin 64) is configured as PTB18 */
+    PORT_SetPinMux(BOARD_BT_S_PORT, BOARD_BT_S_PIN, kPORT_MuxAsGpio);
+
+    PORTB->PCR[18] = ((PORTB->PCR[18] &
+                       /* Mask bits to zero which are setting */
+                       (~(PORT_PCR_PS_MASK | PORT_PCR_PE_MASK | PORT_PCR_ISF_MASK)))
+
+                      /* Pull Select: Internal pullup resistor is enabled on the corresponding pin, if the
+                       * corresponding PE field is set. */
+                      | (uint32_t)(kPORT_PullUp));
+
+    /* PORTB2 (pin 55) is configured as PTB2 */
+    PORT_SetPinMux(BOARD_DB7_PORT, BOARD_DB7_PIN, kPORT_MuxAsGpio);
+
     /* PORTB23 (pin 69) is configured as PTB23 */
-    PORT_SetPinMux(BOARD_RGB_G_PORT, BOARD_RGB_G_PIN, kPORT_MuxAsGpio);
+    PORT_SetPinMux(BOARD_RGB_B_PORT, BOARD_RGB_B_PIN, kPORT_MuxAsGpio);
+
+    /* PORTB3 (pin 56) is configured as PTB3 */
+    PORT_SetPinMux(BOARD_DB6_PORT, BOARD_DB6_PIN, kPORT_MuxAsGpio);
+
+    /* PORTC0 (pin 70) is configured as PTC0 */
+    PORT_SetPinMux(BOARD_ENC_B_PORT, BOARD_ENC_B_PIN, kPORT_MuxAsGpio);
+
+    PORTC->PCR[0] = ((PORTC->PCR[0] &
+                      /* Mask bits to zero which are setting */
+                      (~(PORT_PCR_PS_MASK | PORT_PCR_PE_MASK | PORT_PCR_ISF_MASK)))
+
+                     /* Pull Select: Internal pullup resistor is enabled on the corresponding pin, if the
+                      * corresponding PE field is set. */
+                     | (uint32_t)(kPORT_PullUp));
+
+    /* PORTC1 (pin 71) is configured as PTC1 */
+    PORT_SetPinMux(BOARD_ENC_SW_PORT, BOARD_ENC_SW_PIN, kPORT_MuxAsGpio);
+
+    PORTC->PCR[1] = ((PORTC->PCR[1] &
+                      /* Mask bits to zero which are setting */
+                      (~(PORT_PCR_PS_MASK | PORT_PCR_PE_MASK | PORT_PCR_ISF_MASK)))
+
+                     /* Pull Select: Internal pullup resistor is enabled on the corresponding pin, if the
+                      * corresponding PE field is set. */
+                     | (uint32_t)(kPORT_PullUp));
+
+    /* PORTC10 (pin 82) is configured as PTC10 */
+    PORT_SetPinMux(BOARD_D_RS_PORT, BOARD_D_RS_PIN, kPORT_MuxAsGpio);
+
+    /* PORTC11 (pin 83) is configured as PTC11 */
+    PORT_SetPinMux(BOARD_D_E_PORT, BOARD_D_E_PIN, kPORT_MuxAsGpio);
 
     /* PORTC2 (pin 72) is configured as PTC2 */
-    PORT_SetPinMux(BOARD_RGB_B_PORT, BOARD_RGB_B_PIN, kPORT_MuxAsGpio);
+    PORT_SetPinMux(BOARD_RGB_G_PORT, BOARD_RGB_G_PIN, kPORT_MuxAsGpio);
 
     /* PORTC3 (pin 73) is configured as PTC3 */
     PORT_SetPinMux(BOARD_RGB_R_PORT, BOARD_RGB_R_PIN, kPORT_MuxAsGpio);
+
+    /* PORTC5 (pin 77) is configured as PTC5 */
+    PORT_SetPinMux(BOARD_BT_W_PORT, BOARD_BT_W_PIN, kPORT_MuxAsGpio);
+
+    PORTC->PCR[5] = ((PORTC->PCR[5] &
+                      /* Mask bits to zero which are setting */
+                      (~(PORT_PCR_PS_MASK | PORT_PCR_PE_MASK | PORT_PCR_ISF_MASK)))
+
+                     /* Pull Select: Internal pullup resistor is enabled on the corresponding pin, if the
+                      * corresponding PE field is set. */
+                     | (uint32_t)(kPORT_PullUp));
+
+    /* PORTC7 (pin 79) is configured as PTC7 */
+    PORT_SetPinMux(BOARD_BT_N_PORT, BOARD_BT_N_PIN, kPORT_MuxAsGpio);
+
+    PORTC->PCR[7] = ((PORTC->PCR[7] &
+                      /* Mask bits to zero which are setting */
+                      (~(PORT_PCR_PS_MASK | PORT_PCR_PE_MASK | PORT_PCR_ISF_MASK)))
+
+                     /* Pull Select: Internal pullup resistor is enabled on the corresponding pin, if the
+                      * corresponding PE field is set. */
+                     | (uint32_t)(kPORT_PullUp));
+
+    /* PORTC8 (pin 80) is configured as PTC8 */
+    PORT_SetPinMux(BOARD_BT_E_PORT, BOARD_BT_E_PIN, kPORT_MuxAsGpio);
+
+    PORTC->PCR[8] = ((PORTC->PCR[8] &
+                      /* Mask bits to zero which are setting */
+                      (~(PORT_PCR_PS_MASK | PORT_PCR_PE_MASK | PORT_PCR_ISF_MASK)))
+
+                     /* Pull Select: Internal pullup resistor is enabled on the corresponding pin, if the
+                      * corresponding PE field is set. */
+                     | (uint32_t)(kPORT_PullUp));
+
+    /* PORTC9 (pin 81) is configured as PTC9 */
+    PORT_SetPinMux(BOARD_ENC_A_PORT, BOARD_ENC_A_PIN, kPORT_MuxAsGpio);
+
+    PORTC->PCR[9] = ((PORTC->PCR[9] &
+                      /* Mask bits to zero which are setting */
+                      (~(PORT_PCR_PS_MASK | PORT_PCR_PE_MASK | PORT_PCR_ISF_MASK)))
+
+                     /* Pull Select: Internal pullup resistor is enabled on the corresponding pin, if the
+                      * corresponding PE field is set. */
+                     | (uint32_t)(kPORT_PullUp));
+
+    /* PORTD0 (pin 93) is configured as PTD0 */
+    PORT_SetPinMux(BOARD_SW1_PORT, BOARD_SW1_PIN, kPORT_MuxAsGpio);
+
+    PORTD->PCR[0] = ((PORTD->PCR[0] &
+                      /* Mask bits to zero which are setting */
+                      (~(PORT_PCR_PS_MASK | PORT_PCR_PE_MASK | PORT_PCR_ISF_MASK)))
+
+                     /* Pull Select: Internal pullup resistor is enabled on the corresponding pin, if the
+                      * corresponding PE field is set. */
+                     | (uint32_t)(kPORT_PullUp));
+
+    /* PORTD1 (pin 94) is configured as PTD1 */
+    PORT_SetPinMux(BOARD_SW4_PORT, BOARD_SW4_PIN, kPORT_MuxAsGpio);
+
+    PORTD->PCR[1] = ((PORTD->PCR[1] &
+                      /* Mask bits to zero which are setting */
+                      (~(PORT_PCR_PS_MASK | PORT_PCR_PE_MASK | PORT_PCR_ISF_MASK)))
+
+                     /* Pull Select: Internal pullup resistor is enabled on the corresponding pin, if the
+                      * corresponding PE field is set. */
+                     | (uint32_t)(kPORT_PullUp));
+
+    /* PORTD2 (pin 95) is configured as PTD2 */
+    PORT_SetPinMux(BOARD_SW2_PORT, BOARD_SW2_PIN, kPORT_MuxAsGpio);
+
+    PORTD->PCR[2] = ((PORTD->PCR[2] &
+                      /* Mask bits to zero which are setting */
+                      (~(PORT_PCR_PS_MASK | PORT_PCR_PE_MASK | PORT_PCR_ISF_MASK)))
+
+                     /* Pull Select: Internal pullup resistor is enabled on the corresponding pin, if the
+                      * corresponding PE field is set. */
+                     | (uint32_t)(kPORT_PullUp));
+
+    /* PORTD3 (pin 96) is configured as PTD3 */
+    PORT_SetPinMux(BOARD_SW3_PORT, BOARD_SW3_PIN, kPORT_MuxAsGpio);
+
+    PORTD->PCR[3] = ((PORTD->PCR[3] &
+                      /* Mask bits to zero which are setting */
+                      (~(PORT_PCR_PS_MASK | PORT_PCR_PE_MASK | PORT_PCR_ISF_MASK)))
+
+                     /* Pull Select: Internal pullup resistor is enabled on the corresponding pin, if the
+                      * corresponding PE field is set. */
+                     | (uint32_t)(kPORT_PullUp));
 
     SIM->SOPT5 = ((SIM->SOPT5 &
                    /* Mask bits to zero which are setting */

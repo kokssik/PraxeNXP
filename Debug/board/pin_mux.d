@@ -12,6 +12,7 @@ board/pin_mux.o board/pin_mux.d: ../board/pin_mux.c \
  /home/kokssik/Documents/MCUXpresso_11.7.1_9221/workspace/frdmk64f_hello_world/drivers/fsl_clock.h \
  /home/kokssik/Documents/MCUXpresso_11.7.1_9221/workspace/frdmk64f_hello_world/drivers/fsl_common.h \
  /home/kokssik/Documents/MCUXpresso_11.7.1_9221/workspace/frdmk64f_hello_world/drivers/fsl_port.h \
+ /home/kokssik/Documents/MCUXpresso_11.7.1_9221/workspace/frdmk64f_hello_world/drivers/fsl_gpio.h \
  ../board/pin_mux.h
 /home/kokssik/Documents/MCUXpresso_11.7.1_9221/workspace/frdmk64f_hello_world/drivers/fsl_common.h:
 /home/kokssik/Documents/MCUXpresso_11.7.1_9221/workspace/frdmk64f_hello_world/device/fsl_device_registers.h:
@@ -26,4 +27,5 @@ board/pin_mux.o board/pin_mux.d: ../board/pin_mux.c \
 /home/kokssik/Documents/MCUXpresso_11.7.1_9221/workspace/frdmk64f_hello_world/drivers/fsl_clock.h:
 /home/kokssik/Documents/MCUXpresso_11.7.1_9221/workspace/frdmk64f_hello_world/drivers/fsl_common.h:
 /home/kokssik/Documents/MCUXpresso_11.7.1_9221/workspace/frdmk64f_hello_world/drivers/fsl_port.h:
+/home/kokssik/Documents/MCUXpresso_11.7.1_9221/workspace/frdmk64f_hello_world/drivers/fsl_gpio.h:
 ../board/pin_mux.h:

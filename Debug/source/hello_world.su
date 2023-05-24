@@ -1,1 +1,2 @@
-../source/hello_world.c:30:5:main	16	static
+/home/kokssik/Documents/MCUXpresso_11.7.1_9221/workspace/frdmk64f_hello_world/drivers/fsl_gpio.h:162:20:GPIO_PinWrite	24	static
+../source/hello_world.c:31:5:main	16	static
