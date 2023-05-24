@@ -31,6 +31,7 @@
 int main(void)
 {
     char ch;
+    int stav;
 
     /* Innit board hardware. */
     BOARD_InitBootPins();
@@ -44,10 +45,15 @@ int main(void)
 
     while (1)
     {
-        ch = GETCHAR();
+        //ch = GETCHAR();
+        stav = GPIO_PinRead(BOARD_SW4_GPIO, BOARD_SW4_PIN);
 
-        GPIO_PinWrite(BOARD_RGB_B_GPIO, BOARD_RGB_B_PIN, LED_ON);
-        PUTCHAR(ch);
+        if(stav == 0){
+        	GPIO_PinWrite(BOARD_RGB_B_GPIO, BOARD_RGB_B_PIN, LED_ON);
+        }else{
+        	GPIO_PinWrite(BOARD_RGB_B_GPIO, BOARD_RGB_B_PIN, LED_OFF);
+        }
+        //PUTCHAR(ch);
 
     }
 }

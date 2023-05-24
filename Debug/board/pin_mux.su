@@ -1,4 +1,4 @@
 /home/kokssik/Documents/MCUXpresso_11.7.1_9221/workspace/frdmk64f_hello_world/drivers/fsl_clock.h:668:20:CLOCK_EnableClock	24	static
 /home/kokssik/Documents/MCUXpresso_11.7.1_9221/workspace/frdmk64f_hello_world/drivers/fsl_port.h:374:20:PORT_SetPinMux	24	static
-../board/pin_mux.c:35:6:BOARD_InitBootPins	8	static
-../board/pin_mux.c:63:6:BOARD_InitPins	24	static
+../board/pin_mux.c:52:6:BOARD_InitBootPins	8	static
+../board/pin_mux.c:106:6:BOARD_InitPins	88	static
