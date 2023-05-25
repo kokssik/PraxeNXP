@@ -17,7 +17,10 @@
  ******************************************************************************/
 #define LED_ON 1
 #define LED_OFF 0
-int time = 0;
+int time1 = 0;
+int time2 = 0;
+int turn = 0;
+int stop;
 
 
 /*******************************************************************************
@@ -45,11 +48,11 @@ int main(void)
 
 
 
-	char h[16];
+	char h1[16];
+	char h2[16];
 
-	sprintf(h,"%d", time);
 
-	LCD_string(h);
+	LCD_init();
 	LCD_clr();
 
 
@@ -68,9 +71,26 @@ int main(void)
         }
         */
 
-    	sprintf(h,"%d", time);
 
-    	LCD_string(h);
+    	if(!GPIO_PinRead(BOARD_BT_W_GPIO, BOARD_BT_W_PIN)){
+    		turn = 1;
+    	}
+
+    	if(!GPIO_PinRead(BOARD_BT_E_GPIO, BOARD_BT_E_PIN)){
+    		turn = 2;
+    	}
+
+    	if(!GPIO_PinRead(BOARD_SW1_GPIO, BOARD_SW1_PIN)){
+    		stop = 1;
+    	}else{
+    		stop = 0;
+    	}
+
+    	sprintf(h1,"H1: %d\n", time1);
+    	sprintf(h2,"H2: %d", time2);
+
+    	LCD_string(h1);
+    	LCD_string(h2);
 
     	LCD_to_xy(1,1);
 
@@ -81,6 +101,10 @@ int main(void)
 void SysTick_Handler(void)
 {
 	count++;
-	time++;
+	if((turn == 1) && (stop != 1)){
+	time1++;}
+
+	if(turn == 2 && (stop != 1)){
+	time2++;}
 }
 
