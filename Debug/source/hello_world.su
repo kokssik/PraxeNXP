@@ -1,4 +1,2 @@
-/home/kokssik/Documents/MCUXpresso_11.7.1_9221/workspace/frdmk64f_hello_world/drivers/fsl_gpio.h:162:20:GPIO_PinWrite	24	static
-/home/kokssik/Documents/MCUXpresso_11.7.1_9221/workspace/frdmk64f_hello_world/drivers/fsl_gpio.h:244:24:GPIO_PinRead	16	static
-../source/hello_world.c:31:5:main	16	static
-../source/hello_world.c:84:6:SysTick_Handler	8	static
+../source/hello_world.c:33:5:main	24	static
+../source/hello_world.c:81:6:SysTick_Handler	4	static

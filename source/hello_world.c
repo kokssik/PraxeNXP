@@ -17,6 +17,8 @@
  ******************************************************************************/
 #define LED_ON 1
 #define LED_OFF 0
+int time = 0;
+
 
 /*******************************************************************************
  * Prototypes
@@ -42,40 +44,35 @@ int main(void)
 	SysTick->CTRL = SysTick_CTRL_CLKSOURCE_Msk | SysTick_CTRL_ENABLE_Msk | SysTick_CTRL_TICKINT_Msk;
 
 
-    int stav;
 
+	char h[16];
 
+	sprintf(h,"%d", time);
 
-    for(int i = 0; i < 100; i++){
-    PRINTF("hello world.\r\n");
-    PRINTF("%d",i);
-    }
-    LCD_init();
-    LCD_string("You kow what?\n");
-    LCD_string("rwr");
-    delay(1000);
-    LCD_to_xy(1,1);
-    LCD_string("Kus mijn kloten\n");
-    LCD_string("     UwU");
-    delay(1000);
-    LCD_to_xy(1,1);
-    LCD_clr();
-    LCD_string("Chtit, diky,\n");
-    LCD_string("Horni Police");
-    delay(1000);
+	LCD_string(h);
+	LCD_clr();
+
 
 
 
     while (1)
     {
 
-        stav = GPIO_PinRead(BOARD_SW4_GPIO, BOARD_SW4_PIN);
+    	/*
+   		stav = GPIO_PinRead(BOARD_SW4_GPIO, BOARD_SW4_PIN);
 
         if(stav == 0){
         	GPIO_PinWrite(BOARD_RGB_B_GPIO, BOARD_RGB_B_PIN, LED_ON);
         }else{
         	GPIO_PinWrite(BOARD_RGB_B_GPIO, BOARD_RGB_B_PIN, LED_OFF);
         }
+        */
+
+    	sprintf(h,"%d", time);
+
+    	LCD_string(h);
+
+    	LCD_to_xy(1,1);
 
 
     }
@@ -84,6 +81,6 @@ int main(void)
 void SysTick_Handler(void)
 {
 	count++;
-	GPIO_PinWrite(BOARD_RGB_R_GPIO, BOARD_RGB_R_PIN, LED_ON);
+	time++;
 }
 
