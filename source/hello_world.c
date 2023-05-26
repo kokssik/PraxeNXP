@@ -17,8 +17,8 @@
  ******************************************************************************/
 #define LED_ON 1
 #define LED_OFF 0
-int time1 = 0;
-int time2 = 0;
+int time1 = 30000;
+int time2 = 30000;
 int turn = 0;
 int stop;
 
@@ -48,8 +48,8 @@ int main(void)
 
 
 
-	char h1[16];
-	char h2[16];
+	char h1[24];
+	char h2[24];
 
 
 	LCD_init();
@@ -60,18 +60,6 @@ int main(void)
 
     while (1)
     {
-
-    	/*
-   		stav = GPIO_PinRead(BOARD_SW4_GPIO, BOARD_SW4_PIN);
-
-        if(stav == 0){
-        	GPIO_PinWrite(BOARD_RGB_B_GPIO, BOARD_RGB_B_PIN, LED_ON);
-        }else{
-        	GPIO_PinWrite(BOARD_RGB_B_GPIO, BOARD_RGB_B_PIN, LED_OFF);
-        }
-        */
-
-
     	if(!GPIO_PinRead(BOARD_BT_W_GPIO, BOARD_BT_W_PIN)){
     		turn = 1;
     	}
@@ -86,11 +74,27 @@ int main(void)
     		stop = 0;
     	}
 
-    	sprintf(h1,"H1: %d\n", time1);
-    	sprintf(h2,"H2: %d", time2);
 
-    	LCD_string(h1);
-    	LCD_string(h2);
+		int min1 = (time1 / 60000);
+		int sec1= ((time1 / 1000) - (min1 * 60));
+		int min2 = (time2 / 60000);
+		int sec2 = ((time2 / 1000) - (min2 * 60));
+
+		sprintf(h1,"H1: %d : %.2d\n", min1, sec1);
+    	sprintf(h2,"H2: %d : %.2d\n", min2, sec2);
+
+    	if((time1>0) && (time2 > 0)){
+			LCD_string(h1);
+			LCD_string(h2);
+    	}else if(time1 < 1)
+    	{
+    		LCD_clr();
+    		LCD_string("H1 out of time");
+    	}else{
+    		LCD_clr();
+    		LCD_string("H2 out of time");
+    	}
+
 
     	LCD_to_xy(1,1);
 
@@ -101,10 +105,10 @@ int main(void)
 void SysTick_Handler(void)
 {
 	count++;
-	if((turn == 1) && (stop != 1)){
-	time1++;}
+	if((turn == 1) && (stop != 1) && (time1 >= 0)){
+	time1--;}
 
-	if(turn == 2 && (stop != 1)){
-	time2++;}
+	if(turn == 2 && (stop != 1) && (time2 >= 0)){
+	time2--;}
 }
 
